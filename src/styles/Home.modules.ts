@@ -13,15 +13,15 @@ export const LogoWrapper = styled.div`
 
 export const DarkOverlay = styled.div`
   position: absolute;
-  width: 25%;
+  width: 40%;
   height: 17px;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  ); /* 어두운 배경의 색상과 투명도 조절 가능 */
-  z-index: 0; /* 로고 컨텐츠 뒤로 이동 */
+  background-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 0;
 `;
 
 export const LogoContent = styled.div`
