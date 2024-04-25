@@ -8,7 +8,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const KeyProject: React.FC = () => {
+const KeyProject: React.FunctionComponent = () => {
   const slideImages = [
     slideImg0,
     slideImg1,
@@ -22,9 +22,9 @@ const KeyProject: React.FC = () => {
       <ProjectTitle>KEY PROJECTS</ProjectTitle>
       <Swiper
         className="banner"
-        spaceBetween={50}
-        slidesPerView={3}
-        navigation
+        spaceBetween={10}
+        slidesPerView={5}
+        navigation={false}
         pagination={{ clickable: true }}
       >
         {slideImages.map((img, index) => (

@@ -8,7 +8,7 @@ export const ProjectWrapper = styled.div`
   flex-direction: column;
 
   .swiper {
-    width: 50%;
+    width: 90%;
     height: 100%;
     position: relative;
     z-index: 1;
@@ -16,14 +16,20 @@ export const ProjectWrapper = styled.div`
   }
 
   .swiper-slide {
-    background-position: center;
-    background-size: cover;
     width: 100%;
     height: 100%;
   }
 
   .swiper-slide img {
     width: 100%;
+  }
+
+  .swiper-button-prev {
+    left: -20px;
+  }
+
+  .banner .swiper-button-next {
+    right: 50px;
   }
 `;
 
