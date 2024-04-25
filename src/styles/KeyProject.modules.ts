@@ -23,14 +23,6 @@ export const ProjectWrapper = styled.div`
   .swiper-slide img {
     width: 100%;
   }
-
-  .swiper-button-prev {
-    left: -20px;
-  }
-
-  .banner .swiper-button-next {
-    right: 50px;
-  }
 `;
 
 export const ProjectTitle = styled.div`
