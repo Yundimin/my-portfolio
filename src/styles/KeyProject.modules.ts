@@ -4,24 +4,34 @@ export const ProjectWrapper = styled.div`
   width: 100%;
   height: 720px;
   display: flex;
-  background-color: gold;
   flex-direction: column;
+  position: relative;
 
-  .swiper {
-    width: 90%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 2rem;
-  }
+  .project-slide-wrapper {
+    display: flex;
+    justify-content: center;
 
-  .swiper-slide {
-    width: 100%;
-    height: 100%;
-  }
+    .swiper {
+      width: 90%;
+      height: 90%;
+      margin-bottom: 2rem;
+    }
 
-  .swiper-slide img {
-    width: 100%;
+    .SwiperSlide {
+      display: flex;
+    }
+
+    .swiper-slide {
+      justify-content: center;
+      display: flex;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      padding: 10;
+      transform: translateY(-100%);
+      color: black;
+    }
   }
 `;
 

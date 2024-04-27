@@ -1,13 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Logo from "./Logo";
 import KeyProject from "./KeyProject";
 
 const Home = () => {
   return (
-    <>
-      <Logo />
-      <KeyProject />
-    </>
+    <Fragment>
+      <div>
+        <Logo />
+        <KeyProject />
+      </div>
+    </Fragment>
   );
 };
 
