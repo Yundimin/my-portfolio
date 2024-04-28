@@ -51,6 +51,7 @@ export const ProjectWrapper = styled.div`
         display: flex;
         align-items: center;
         transition: opacity 0.3s ease;
+        cursor: default;
 
         &:hover {
           opacity: 0.7;

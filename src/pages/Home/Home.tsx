@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Logo from "./Logo";
 import KeyProject from "./KeyProject";
+import VideoWorks from "./VideoWorks";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <div>
         <Logo />
         <KeyProject />
+        <VideoWorks />
       </div>
     </Fragment>
   );
