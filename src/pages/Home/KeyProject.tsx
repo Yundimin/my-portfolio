@@ -6,7 +6,6 @@ import slideImg1 from "../../assets/slide1.png";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
-import { useEffect, useState } from "react";
 
 const KeyProject = () => {
   const slideImages = [
@@ -18,26 +17,6 @@ const KeyProject = () => {
     slideImg1,
   ];
 
-  const [slidesPerView, setSlidesPerView] = useState(5);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 2000) {
-        setSlidesPerView(5);
-      } else if (window.innerWidth >= 1570) {
-        setSlidesPerView(4);
-      } else if (window.innerWidth >= 1140) {
-        setSlidesPerView(3);
-      } else {
-        setSlidesPerView(2);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <ProjectWrapper>
       <ProjectTitle>KEY PROJECTS</ProjectTitle>
@@ -47,8 +26,8 @@ const KeyProject = () => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           className="banner"
-          spaceBetween={50}
-          slidesPerView={slidesPerView}
+          spaceBetween={20}
+          slidesPerView={"auto"}
           navigation={{
             prevEl: ".swiper-button-prev",
             nextEl: ".swiper-button-next",
@@ -58,7 +37,8 @@ const KeyProject = () => {
         >
           {slideImages.map((img, index) => (
             <SwiperSlide key={index}>
-              <img src={img} alt={`Slide ${index}`} />
+              <img src={img} alt={`Slide ${index}`} className="slide-img" />
+              <div className="slide-caption">Your Caption Here</div>
             </SwiperSlide>
           ))}
         </Swiper>

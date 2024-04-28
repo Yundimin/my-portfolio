@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const ProjectTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 40px 0;
+`;
+
 export const ProjectWrapper = styled.div`
   width: 100%;
   height: 720px;
@@ -12,33 +20,60 @@ export const ProjectWrapper = styled.div`
     justify-content: center;
 
     .swiper {
-      width: 90%;
+      width: 88%;
       height: 90%;
       margin-bottom: 2rem;
     }
 
-    .SwiperSlide {
-      display: flex;
-    }
-
     .swiper-slide {
+      width: 360px;
       justify-content: center;
       display: flex;
+      transition: opacity 0.5s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      .slide-img {
+        width: 100%;
+      }
+
+      .slide-caption {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ffffff;
+        color: black;
+        font-weight: 700;
+        opacity: 0;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
 
     .swiper-button-prev,
     .swiper-button-next {
-      padding: 10;
-      transform: translateY(-100%);
+      padding: 10px;
       color: black;
     }
-  }
-`;
 
-export const ProjectTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 36px;
-  font-weight: 700;
-  padding: 20px 0;
+    @media (max-width: 1060px) {
+      .swiper-slide {
+        width: 300px;
+        margin: 0 10px;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: translateY(-50%);
+      }
+    }
+  }
 `;
