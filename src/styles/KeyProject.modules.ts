@@ -18,6 +18,7 @@ export const ProjectWrapper = styled.div`
   .project-slide-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .swiper {
       width: 88%;
@@ -59,21 +60,19 @@ export const ProjectWrapper = styled.div`
       }
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-      padding: 10px;
+    .key-swiper-button-prev,
+    .key-swiper-button-next {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
       color: black;
+      padding: 20px;
     }
 
     @media (max-width: 1060px) {
       .swiper-slide {
         width: 300px;
         margin: 0 10px;
-      }
-
-      .swiper-button-prev,
-      .swiper-button-next {
-        transform: translateY(-50%);
       }
     }
   }
