@@ -23,8 +23,8 @@ const KeyProject = () => {
     event.target.pauseVideo();
   };
   const opts: YouTubeProps["opts"] = {
-    height: "390",
-    width: "500",
+    height: "390px",
+    width: "100%",
   };
 
   return (

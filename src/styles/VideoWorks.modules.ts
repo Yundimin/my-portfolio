@@ -56,6 +56,12 @@ export const ProjectWrapper = styled.div`
     }
 
     @media (max-width: 1400px) {
+      .video-wrapper {
+        width: 80%;
+      }
+      .swiper-slide {
+        width: 300px;
+      }
     }
   }
 `;
