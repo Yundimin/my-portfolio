@@ -9,14 +9,22 @@ import leftArrow from "../../assets/left-arrow.png";
 import rightArrow from "../../assets/right-arrow.png";
 
 const KeyProject = () => {
-  const videoIds = ["atfDG8dTV50", "WLoOTz_7l3s", "WLoOTz_7l3s", "WLoOTz_7l3s"];
+  const videoId1 = [
+    "atfDG8dTV50",
+    "WLoOTz_7l3s",
+    "WLoOTz_7l3s",
+    "WLoOTz_7l3s",
+    "WLoOTz_7l3s",
+    "WLoOTz_7l3s",
+  ];
+  const videoId2 = ["atfDG8dTV50", "WLoOTz_7l3s", "WLoOTz_7l3s", "WLoOTz_7l3s"];
 
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     event.target.pauseVideo();
   };
   const opts: YouTubeProps["opts"] = {
     height: "390",
-    width: "640",
+    width: "500",
   };
 
   return (
@@ -28,24 +36,48 @@ const KeyProject = () => {
           alt={"leftArrow"}
           className="video-swiper-button-prev"
         ></img>
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          className="banner"
-          spaceBetween={50}
-          slidesPerView={2.5}
-          navigation={{
-            prevEl: ".video-swiper-button-prev",
-            nextEl: ".video-swiper-button-next",
-          }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-        >
-          {videoIds.map((videoId, index) => (
-            <SwiperSlide key={index}>
-              <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="video-wrapper">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            className="banner"
+            spaceBetween={10}
+            slidesPerView={"auto"}
+            navigation={{
+              prevEl: ".video-swiper-button-prev",
+              nextEl: ".video-swiper-button-next",
+            }}
+          >
+            {videoId1.map((videoId, index) => (
+              <SwiperSlide key={index}>
+                <YouTube
+                  videoId={videoId}
+                  opts={opts}
+                  onReady={onPlayerReady}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            className="banner"
+            spaceBetween={10}
+            slidesPerView={"auto"}
+            navigation={{
+              prevEl: ".video-swiper-button-prev",
+              nextEl: ".video-swiper-button-next",
+            }}
+          >
+            {videoId1.map((videoId, index) => (
+              <SwiperSlide key={index}>
+                <YouTube
+                  videoId={videoId}
+                  opts={opts}
+                  onReady={onPlayerReady}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <img
           src={rightArrow}
           alt={"rightArrow"}

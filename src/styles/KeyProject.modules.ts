@@ -20,8 +20,13 @@ export const ProjectWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
+    .swiper-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
     .swiper {
-      width: 88%;
+      width: 90%;
       height: 90%;
       margin-bottom: 2rem;
     }

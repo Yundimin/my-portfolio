@@ -17,18 +17,32 @@ export const ProjectWrapper = styled.div`
   background-color: #c8c8c8;
 
   .project-slide-wrapper {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    .video-wrapper {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
     .swiper {
-      width: 88%;
+      width: 100%;
       height: 100%;
     }
 
     .swiper-slide {
+      width: 500px;
       justify-content: center;
-      display: flex;
       transition: opacity 0.5s ease;
     }
 
@@ -38,10 +52,10 @@ export const ProjectWrapper = styled.div`
       width: 40px;
       height: 40px;
       color: black;
-      padding: 20px;
+      margin: 20px;
     }
 
-    @media (max-width: 1060px) {
+    @media (max-width: 1400px) {
     }
   }
 `;
