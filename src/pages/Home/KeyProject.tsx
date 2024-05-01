@@ -50,7 +50,7 @@ const KeyProject = () => {
         <img
           src={rightArrow}
           alt={"rightArrow"}
-          className="video-swiper-button-next"
+          className="key-swiper-button-next"
         ></img>
       </div>
     </ProjectWrapper>
