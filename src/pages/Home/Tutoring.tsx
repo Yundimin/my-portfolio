@@ -1,4 +1,4 @@
-import { ProjectTitle, ProjectWrapper } from "../../styles/KeyProject.modules";
+import { ProjectTitle, ProjectWrapper } from "../../styles/Tutoring.modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import slideImg0 from "../../assets/slide0.png";
@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-const KeyProject = () => {
+const Tutoring = () => {
   const slideImages = [
     slideImg0,
     slideImg1,
@@ -21,12 +21,12 @@ const KeyProject = () => {
 
   return (
     <ProjectWrapper>
-      <ProjectTitle>KEY PROJECTS</ProjectTitle>
+      <ProjectTitle>Tutoring</ProjectTitle>
       <div className="project-slide-wrapper">
         <img
           src={leftArrow}
           alt={"leftArrow"}
-          className="key-swiper-button-prev"
+          className="tutor-swiper-button-prev"
         ></img>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -34,11 +34,9 @@ const KeyProject = () => {
           spaceBetween={20}
           slidesPerView={"auto"}
           navigation={{
-            prevEl: ".key-swiper-button-prev",
-            nextEl: ".key-swiper-button-next",
+            prevEl: ".tutor-swiper-button-prev",
+            nextEl: ".tutor-swiper-button-next",
           }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {slideImages.map((img, index) => (
             <SwiperSlide key={index}>
@@ -50,11 +48,11 @@ const KeyProject = () => {
         <img
           src={rightArrow}
           alt={"rightArrow"}
-          className="video-swiper-button-next"
+          className="tutor-swiper-button-next"
         ></img>
       </div>
     </ProjectWrapper>
   );
 };
 
-export default KeyProject;
+export default Tutoring;

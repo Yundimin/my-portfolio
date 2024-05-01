@@ -2,16 +2,18 @@ import React, { Fragment } from "react";
 import Logo from "./Logo";
 import KeyProject from "./KeyProject";
 import VideoWorks from "./VideoWorks";
+import Tutoring from "./Tutoring";
 
 const Home = () => {
   return (
-    <Fragment>
+    <>
       <div>
         <Logo />
         <KeyProject />
         <VideoWorks />
+        <Tutoring />
       </div>
-    </Fragment>
+    </>
   );
 };
 
