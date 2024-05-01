@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import KeyProject from "./KeyProject";
 import VideoWorks from "./VideoWorks";
 import Tutoring from "./Tutoring";
+import Clients from "./Clients";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <KeyProject />
         <VideoWorks />
         <Tutoring />
+        <Clients />
       </div>
     </>
   );

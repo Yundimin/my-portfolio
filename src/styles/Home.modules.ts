@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const LogoWrapper = styled.div`
   background-image: url("../assets/background.png");
-  background-size: 100%;
-  background-position: center;
+  background-size: cover;
+  background-position: top;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 1040px;
   display: flex;
