@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const NavbarWrapper = styled.div`
+  display: flex;
+  align-items: center;
   .navLinks {
-    margin-left: auto;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -27,6 +29,18 @@ export const NavbarWrapper = styled.div`
 
     &:active {
       color: black;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.07);
     }
   }
 

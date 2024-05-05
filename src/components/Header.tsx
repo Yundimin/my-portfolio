@@ -1,11 +1,27 @@
+import React, { useState } from "react";
 import { NavbarWrapper } from "../styles/Headers.modules";
 import { NavLink } from "react-router-dom";
-export const menuItems = [
-  { name: "HOME", link: "/" },
-  { name: "ABOUT", link: "About_me" },
-];
+import { useTranslation } from "react-i18next";
+import i18n from "../locales/i18n";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = () => {
+export const Header = () => {
+  const { t } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+
+  const menuItems = [
+    { name: "header.home", link: "/" },
+    { name: "header.about", link: "About_me" },
+  ];
+
+  const handleLanguageChange = (lang: string) => {
+    setSelectedLanguage(lang);
+    i18n.changeLanguage(lang);
+    setShowModal(false);
+  };
+
   return (
     <NavbarWrapper className="header-container">
       <div className="navLinks">
@@ -15,9 +31,12 @@ const Header = () => {
             key={index}
             style={{ textDecoration: "none", color: "#C8C8C8" }}
           >
-            <div className="links">{nav.name}</div>
+            <div className="links">{t(nav.name)}</div>
           </NavLink>
         ))}
+      </div>
+      <div className="icon">
+        <FontAwesomeIcon icon={faGlobe} onClick={() => setShowModal(true)} />
       </div>
     </NavbarWrapper>
   );
