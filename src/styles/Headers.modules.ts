@@ -34,7 +34,7 @@ export const NavbarWrapper = styled.div`
 
   .icon {
     position: absolute;
-    right: 25px;
+    right: 30px;
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s ease;
