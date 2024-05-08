@@ -2,5 +2,12 @@
   "header": {
     "home": "홈",
     "about": "어바웃"
+  },
+  "language-change": {
+    "title": "언어 변경",
+    "ko": "한국어",
+    "en": "영어",
+    "cancel": "취소",
+    "change": "변경"
   }
 }

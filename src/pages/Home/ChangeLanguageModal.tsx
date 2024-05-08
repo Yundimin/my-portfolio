@@ -6,6 +6,11 @@ import i18n from "../../locales/i18n";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form } from "react-bootstrap";
+import {
+  ApplyButton,
+  FormCheck,
+} from "../../styles/ChangeLanguageModal.modules";
+import { useTranslation } from "react-i18next";
 
 interface LanguageChecked {
   en: boolean;
@@ -13,6 +18,8 @@ interface LanguageChecked {
 }
 
 function ChangeLanguageModal() {
+  const { t } = useTranslation();
+
   const [show, setShow] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const [languagesChecked, setLanguagesChecked] = useState<LanguageChecked>({
@@ -31,8 +38,8 @@ function ChangeLanguageModal() {
 
   const handleLanguageToggle = (lang: keyof LanguageChecked) => {
     setLanguagesChecked({
-      en: lang === "en" ? !languagesChecked.en : false,
-      ko: lang === "ko" ? !languagesChecked.ko : false,
+      en: lang === "en" ? true : false,
+      ko: lang === "ko" ? true : false,
     });
     if (languagesChecked[lang]) {
       setSelectedLanguage("");
@@ -55,36 +62,36 @@ function ChangeLanguageModal() {
         centered
       >
         <Modal.Header>
-          <Modal.Title>Language Change</Modal.Title>
+          <Modal.Title>{t("language-change.title")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Check
+            <FormCheck
               type="checkbox"
               id="en"
-              label="영어"
+              label={t("language-change.en")}
               checked={languagesChecked["en"]}
               onChange={() => handleLanguageToggle("en")}
             />
-            <Form.Check
+            <FormCheck
               type="checkbox"
               id="ko"
-              label="한국어"
+              label={t("language-change.ko")}
               checked={languagesChecked["ko"]}
               onChange={() => handleLanguageToggle("ko")}
             />
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button variant="light" onClick={handleClose} className="applyBtn">
+            {t("language-change.cancel")}
           </Button>
-          <Button
-            variant="primary"
+          <ApplyButton
+            variant="secondary"
             onClick={() => handleLanguageChange(selectedLanguage)}
           >
-            Change
-          </Button>
+            {t("language-change.change")}
+          </ApplyButton>
         </Modal.Footer>
       </Modal>
     </>

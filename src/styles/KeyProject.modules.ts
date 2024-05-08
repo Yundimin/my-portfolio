@@ -71,7 +71,7 @@ export const ProjectWrapper = styled.div`
       width: 40px;
       height: 40px;
       color: black;
-      padding: 20px;
+      margin: 20px;
     }
 
     @media (max-width: 1060px) {
