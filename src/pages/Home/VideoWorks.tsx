@@ -5,8 +5,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import YouTube, { YouTubeProps } from "react-youtube";
-import leftArrow from "../../assets/left-arrow.png";
-import rightArrow from "../../assets/right-arrow.png";
+import leftArrow from "../../assets/left-arrow-white.png";
+import rightArrow from "../../assets/right-arrow-white.png";
 
 const KeyProject = () => {
   const videoId1 = [
@@ -31,10 +31,17 @@ const KeyProject = () => {
     <ProjectWrapper>
       <ProjectTitle>Video Works</ProjectTitle>
       <div className="project-slide-wrapper">
+        <div className="gradient-box-left"></div>
+        <div className="gradient-box-right"></div>
         <img
           src={leftArrow}
           alt={"leftArrow"}
           className="video-swiper-button-prev"
+        ></img>
+        <img
+          src={rightArrow}
+          alt={"rightArrow"}
+          className="video-swiper-button-next"
         ></img>
         <div className="video-wrapper">
           <Swiper
@@ -78,11 +85,6 @@ const KeyProject = () => {
             ))}
           </Swiper>
         </div>
-        <img
-          src={rightArrow}
-          alt={"rightArrow"}
-          className="video-swiper-button-next"
-        ></img>
       </div>
     </ProjectWrapper>
   );
