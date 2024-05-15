@@ -66,7 +66,7 @@ export const ProjectWrapper = styled.div`
     .gradient-box-left {
       position: absolute;
       z-index: 2;
-      width: 2 0%;
+      width: 20%;
       left: 0;
       height: 90%;
       background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 69.77%);
