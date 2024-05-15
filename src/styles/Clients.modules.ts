@@ -8,7 +8,7 @@ export const ClientWrapper = styled.div`
   width: 100%;
   height: 1300px;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
   overflow: auto;
 `;
@@ -16,5 +16,6 @@ export const ClientWrapper = styled.div`
 export const ClientImg = styled.img`
   display: flex;
   width: 90%;
-  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
 `;

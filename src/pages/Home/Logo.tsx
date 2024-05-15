@@ -7,12 +7,8 @@ import {
 } from "../../styles/Home.modules";
 import textImg from "../../assets/text-rotate.png";
 import nameImg from "../../assets/CWJ.png";
-import { useTranslation } from "react-i18next";
-import i18n from "../../locales/i18n";
 
 function Logo() {
-  const { t } = useTranslation();
-  const languageRef = useRef<null | HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {

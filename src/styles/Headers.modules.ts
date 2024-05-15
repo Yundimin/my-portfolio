@@ -4,6 +4,12 @@ export const NavbarWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+
+  .headerLogo {
+    position: absolute;
+    width: 245px;
+    margin-left: 65px;
+  }
   .navLinks {
     margin: auto;
     display: flex;
@@ -35,7 +41,7 @@ export const NavbarWrapper = styled.div`
 
   .icon {
     position: absolute;
-    right: 30px;
+    right: 60px;
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s ease;

@@ -19,7 +19,7 @@ export const DarkOverlay = styled.div`
   height: 17px;
   background-image: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.8) 50%,
     rgba(0, 0, 0, 0) 100%
   );
 
