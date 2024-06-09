@@ -19,8 +19,8 @@ export const DarkOverlay = styled.div`
   height: 17px;
   background-image: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 0.8) 50%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 0) 50%
   );
 
   z-index: 0;
@@ -30,7 +30,6 @@ export const LogoContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   height: 17px;
   width: 100%;
   overflow: hidden;

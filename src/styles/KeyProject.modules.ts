@@ -36,9 +36,9 @@ export const ProjectWrapper = styled.div`
       justify-content: center;
       display: flex;
       transition: opacity 0.5s ease;
-
       &:hover {
         opacity: 0.7;
+        cursor: pointer;
       }
 
       .slide-img {
@@ -57,7 +57,6 @@ export const ProjectWrapper = styled.div`
         display: flex;
         align-items: center;
         transition: opacity 0.3s ease;
-        cursor: default;
 
         &:hover {
           opacity: 0.7;

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 async function getImageUrl() {
   try {
-    const storageRef = ref(storage, "assets/Clients.png");
+    const storageRef = ref(storage, "assets/clients/Clients.png");
 
     const url = await getDownloadURL(storageRef);
     return url;

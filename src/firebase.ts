@@ -2,14 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD77NAgbYm19-1fPUdVsCHCeyNHAErcOto",
-  authDomain: "choo-homepage.firebaseapp.com",
-  projectId: "choo-homepage",
-  storageBucket: "choo-homepage.appspot.com",
-  messagingSenderId: "743087930005",
-  appId: "1:743087930005:web:c41f86ea7c0179bfeff99c",
+  apiKey: "AIzaSyBB1Hlwcc848L8expaq3l20P6KzpXEk5cU",
+  authDomain: "choo-page-b290f.firebaseapp.com",
+  projectId: "choo-page-b290f",
+  storageBucket: "choo-page-b290f.appspot.com",
+  messagingSenderId: "910600133847",
+  appId: "1:910600133847:web:22b6d6b0855fc805e66492",
 };
 
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
 
 export const storage = getStorage(app);

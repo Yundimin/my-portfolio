@@ -5,7 +5,7 @@ import {
   LogoWrapper,
   NameImg,
 } from "../../styles/Home.modules";
-import textImg from "../../assets/text-rotate.png";
+import textImg from "../../assets/text-rotate.svg";
 import nameImg from "../../assets/CWJ.png";
 
 function Logo() {
@@ -33,7 +33,7 @@ function Logo() {
       }}
     >
       <LogoContent>
-        <img src={textImg} alt="textImg" className="item" />
+        <img src={textImg} alt="text" className="item" />
       </LogoContent>
       <DarkOverlay />
       <NameImg src={nameImg} alt="textImg" />
