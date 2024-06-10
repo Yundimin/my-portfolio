@@ -32,13 +32,23 @@ function KeyProject() {
   const [modalShow, setModalShow] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<string | undefined>("");
   const [modalAlt, setModalAlt] = useState<string>("");
+  const [modalTitle, setModalTitle] = useState<string | undefined>("");
+  const [modalDescription, setModalDescription] = useState<string | undefined>(
+    ""
+  );
 
-  const handleImageClick = (imgSrc: string | undefined, imgAlt: string) => {
+  const handleImageClick = (
+    imgSrc: string | undefined,
+    imgAlt: string,
+    title: string | undefined,
+    description: string | undefined
+  ) => {
     setModalImage(imgSrc);
     setModalAlt(imgAlt);
+    setModalTitle(title);
+    setModalDescription(description);
     setModalShow(true);
   };
-
   return (
     <ProjectWrapper>
       <ProjectTitle>KEY PROJECTS</ProjectTitle>
@@ -62,14 +72,19 @@ function KeyProject() {
             keyProject?.map((keyProject) => (
               <SwiperSlide key={keyProject.id}>
                 <img
-                  src={keyProject.detailImg}
+                  src={keyProject.titleImg}
                   alt={`Slide Img`}
                   className="slide-img"
                 />
                 <div
                   className="slide-caption"
                   onClick={() =>
-                    handleImageClick(keyProject.detailImg, `Slide Img`)
+                    handleImageClick(
+                      keyProject.detailImg,
+                      "Slide Img",
+                      keyProject.detailTitle,
+                      keyProject.detailDescription
+                    )
                   }
                 >
                   {keyProject.title}
@@ -91,6 +106,8 @@ function KeyProject() {
         handleClose={() => setModalShow(false)}
         imgSrc={modalImage}
         imgAlt={modalAlt}
+        title={modalTitle}
+        description={modalDescription}
       />
     </ProjectWrapper>
   );

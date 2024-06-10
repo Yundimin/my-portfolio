@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -7,6 +7,8 @@ interface ImageModalProps {
   handleClose: () => void;
   imgSrc?: string;
   imgAlt: string;
+  title?: string;
+  description?: string;
 }
 
 const KeyProjectDetailModal: React.FC<ImageModalProps> = ({
@@ -14,6 +16,8 @@ const KeyProjectDetailModal: React.FC<ImageModalProps> = ({
   handleClose,
   imgSrc,
   imgAlt,
+  title,
+  description,
 }) => {
   return (
     <>
@@ -26,9 +30,12 @@ const KeyProjectDetailModal: React.FC<ImageModalProps> = ({
         size="xl"
       >
         <Modal.Header closeButton>
-          <Modal.Title>쿠쿠르 삥뽕</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body>
+          <img src={imgSrc} alt={imgAlt} style={{ width: "100%" }} />
+          <div style={{ marginTop: 20 }}>{description}</div>
+        </Modal.Body>
       </Modal>
     </>
   );
