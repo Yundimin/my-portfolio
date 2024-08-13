@@ -87,7 +87,8 @@ function KeyProject() {
                     )
                   }
                 >
-                  {keyProject.title}
+                  <div className="slide-title">{keyProject.title}</div>
+                  <div className="slide-subtitle">{keyProject.subtitle}</div>
                 </div>
               </SwiperSlide>
             ))

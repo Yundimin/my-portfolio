@@ -29,11 +29,28 @@ const KeyProjectDetailModal: React.FC<ImageModalProps> = ({
         centered
         size="xl"
       >
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
+        <Modal.Header>
+          <Modal.Title style={{ borderBottom: "none", marginLeft: "20px" }}>
+            {title}
+          </Modal.Title>
+          <button
+            type="button"
+            className="btn-close"
+            aria-label="Close"
+            onClick={handleClose}
+            style={{ marginRight: "10px" }}
+          ></button>
         </Modal.Header>
-        <Modal.Body>
-          <img src={imgSrc} alt={imgAlt} style={{ width: "100%" }} />
+        <Modal.Body style={{ padding: "0 50px 50px 50px" }}>
+          <img
+            src={imgSrc}
+            alt={imgAlt}
+            style={{
+              width: "100%",
+              minHeight: "540px",
+              objectFit: "scale-down",
+            }}
+          />
           <div style={{ marginTop: 20 }}>{description}</div>
         </Modal.Body>
       </Modal>

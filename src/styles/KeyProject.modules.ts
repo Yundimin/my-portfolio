@@ -50,13 +50,23 @@ export const ProjectWrapper = styled.div`
         height: 100%;
         width: 100%;
         background-color: #ffffff;
-        color: black;
-        font-weight: 700;
+
         opacity: 0;
         justify-content: center;
         display: flex;
         align-items: center;
         transition: opacity 0.3s ease;
+        flex-direction: column;
+
+        .slide-title {
+          color: black;
+          font-weight: 600;
+          font-size: 24px;
+        }
+
+        .slide-subtitle {
+          font-size: 18px;
+        }
 
         &:hover {
           opacity: 0.7;

@@ -1,14 +1,46 @@
 import { ProjectTitle, ProjectWrapper } from "../../styles/VideoWorks.modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { useState, useEffect } from "react";
+import { onSnapshot, QuerySnapshot, DocumentData } from "firebase/firestore";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import YouTube, { YouTubeProps } from "react-youtube";
 import leftArrow from "../../assets/left-arrow-white.png";
 import rightArrow from "../../assets/right-arrow-white.png";
+import {
+  getVideoWorksFirst,
+  getVideoWorksSecond,
+} from "../../firebaseFunctions";
 
-const KeyProject = () => {
+const useVideoWorks = (query: any) => {
+  const [videoWorks, setVideoWorks] = useState<any[]>([]);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query,
+      (snapshot: QuerySnapshot<DocumentData>) => {
+        setVideoWorks(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+      }
+    );
+
+    return () => unsubscribe();
+  }, [query]);
+
+  return videoWorks;
+};
+
+const VidowWorks = () => {
+  const keyVideoWorks = useVideoWorks(getVideoWorksFirst);
+  const keyVideoWorkSecond = useVideoWorks(getVideoWorksSecond);
+
+  console.log(keyVideoWorkSecond);
   const videoId1 = [
     "atfDG8dTV50",
     "WLoOTz_7l3s",
@@ -54,10 +86,10 @@ const KeyProject = () => {
               nextEl: ".video-swiper-button-next",
             }}
           >
-            {videoId1.map((videoId, index) => (
+            {keyVideoWorks.map((videoWork, index) => (
               <SwiperSlide key={index}>
                 <YouTube
-                  videoId={videoId}
+                  videoId={videoWork.id}
                   opts={opts}
                   onReady={onPlayerReady}
                 />
@@ -74,10 +106,10 @@ const KeyProject = () => {
               nextEl: ".video-swiper-button-next",
             }}
           >
-            {videoId1.map((videoId, index) => (
+            {keyVideoWorkSecond.map((videoWork, index) => (
               <SwiperSlide key={index}>
                 <YouTube
-                  videoId={videoId}
+                  videoId={videoWork.id}
                   opts={opts}
                   onReady={onPlayerReady}
                 />
@@ -90,4 +122,4 @@ const KeyProject = () => {
   );
 };
 
-export default KeyProject;
+export default VidowWorks;
