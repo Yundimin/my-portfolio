@@ -32,11 +32,12 @@ export const ProjectWrapper = styled.div`
     }
 
     .swiper-slide {
-      width: 400px;
+      width: 500px;
       justify-content: center;
       display: flex;
       transition: opacity 0.5s ease;
       flex-direction: column;
+      cursor: pointer;
 
       &:hover {
         opacity: 0.7;
@@ -44,7 +45,7 @@ export const ProjectWrapper = styled.div`
 
       .slide-img {
         width: 100%;
-        height: 400px;
+        height: 350px;
       }
 
       .slide-caption {
@@ -52,12 +53,20 @@ export const ProjectWrapper = styled.div`
         width: 100%;
         background-color: #ff7c7c;
         color: black;
-        font-weight: 700;
         justify-content: center;
         display: flex;
+        flex-direction: column;
         align-items: center;
         transition: opacity 0.3s ease;
         cursor: default;
+        font-size: 20px;
+
+        .slide-title {
+          font-weight: 600;
+        }
+        .slide-subtitle {
+          font-weight: 300;
+        }
       }
     }
 

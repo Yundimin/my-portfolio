@@ -93,7 +93,7 @@ function KeyProject() {
               </SwiperSlide>
             ))
           ) : (
-            <div>ss</div>
+            <div></div>
           )}
         </Swiper>
         <img
