@@ -203,7 +203,7 @@ const AboutMe = () => {
                 )}
               </div>
               <div className="exam-non-profit-box">
-                <div className="lecture-title">
+                <div className="exam-art-title">
                   {jsonObject?.lectures[1].name}
                 </div>
                 {jsonObject?.lectures[1].project.map(
@@ -219,7 +219,7 @@ const AboutMe = () => {
                   )
                 )}
 
-                <div className="lecture-title">
+                <div className="non-profit-title">
                   {jsonObject?.lectures[2].name}
                 </div>
                 {jsonObject?.lectures[2].project.map(

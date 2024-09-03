@@ -14,7 +14,8 @@ export const Loading = styled.div`
 `;
 
 export const AboutMeWrapper = styled.div`
-  width: 1080px;
+  width: 100%;
+  max-width: 1080px;
   height: 100%;
   justify-content: center;
   display: flex;
@@ -35,7 +36,8 @@ export const AboutMeWrapper = styled.div`
 
   .about-me-box {
     width: 100%;
-    padding: 0 190px;
+    margin: auto;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 80px;
@@ -87,6 +89,7 @@ export const AboutMeWrapper = styled.div`
         .school-title {
           font-weight: 500;
           text-align: center;
+          margin-bottom: 20px;
         }
 
         .school-info {
@@ -95,6 +98,7 @@ export const AboutMeWrapper = styled.div`
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          gap: 50px;
         }
       }
 
@@ -102,12 +106,13 @@ export const AboutMeWrapper = styled.div`
         .contact-title {
           font-weight: 500;
           text-align: center;
+          margin-bottom: 20px;
         }
 
         .contact-info {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 10px;
         }
       }
     }
@@ -222,6 +227,10 @@ export const AboutMeWrapper = styled.div`
             margin-bottom: 10px;
           }
 
+          .exam-art-title {
+            margin-bottom: 10px;
+          }
+
           .project-box {
             margin-left: 15px;
             margin-bottom: 5px;
@@ -257,7 +266,11 @@ export const AboutMeWrapper = styled.div`
           display: flex;
           flex-direction: column;
 
-          .lecture-title {
+          .non-profit-title {
+            margin-bottom: 10px;
+          }
+
+          .exam-art-title {
             margin-bottom: 10px;
           }
 
@@ -331,6 +344,119 @@ export const AboutMeWrapper = styled.div`
       .display {
         width: 100%;
         display: flex;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-me-box {
+      .edu-contact-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        .school-box {
+          .school-title {
+            font-weight: 500;
+            text-align: center;
+          }
+
+          .school-info {
+            margin-left: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .lecture-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        .title {
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .lecture-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+
+          .exam-non-profit-box {
+            display: flex;
+            flex-direction: column;
+
+            .non-profit-title {
+              margin-top: 30px;
+              margin-bottom: 10px;
+            }
+
+            .exam-art-title {
+              margin-bottom: 10px;
+            }
+
+            .project-box {
+              margin-left: 20px;
+              margin-bottom: 5px;
+            }
+
+            .project-box h2 {
+              font-size: 16px;
+              font-weight: 200;
+            }
+
+            .project {
+              margin-left: 15px;
+            }
+
+            .project h3 {
+              font-size: 16px;
+              margin-top: 10px;
+              font-weight: 200;
+            }
+
+            ul {
+              padding-left: 20px;
+            }
+
+            li {
+              font-size: 16px;
+              margin-bottom: 5px;
+              line-height: 15px;
+            }
+          }
+        }
+      }
+
+      .award-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        .title {
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .award {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
       }
     }
   }
