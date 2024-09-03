@@ -15,7 +15,7 @@ export const Header = () => {
   ];
 
   return (
-    <NavbarWrapper className="header-container">
+    <NavbarWrapper>
       <img src={headerLogo} alt="headerLogo" className="headerLogo"></img>
       <div className="navLinks">
         {menuItems.map((nav, index) => (
@@ -28,7 +28,7 @@ export const Header = () => {
           </NavLink>
         ))}
       </div>
-      <ChangeLanguageModal />
+      {/* <ChangeLanguageModal /> */}
     </NavbarWrapper>
   );
 };

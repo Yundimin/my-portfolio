@@ -11,6 +11,7 @@ export const NavbarWrapper = styled.div`
     margin-left: 65px;
   }
   .navLinks {
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -53,7 +54,41 @@ export const NavbarWrapper = styled.div`
 
   @media (max-width: 1060px) {
     .links {
-      font-size: 12px;
+      font-size: 15px;
+    }
+
+    .headerLogo {
+      width: 200px;
+      margin-left: 40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .links {
+      font-size: 15px;
+    }
+
+    .navLinks {
+      justify-content: flex-end;
+      margin-right: 30px;
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .headerLogo {
+      width: 150px;
+      margin-left: 30px;
+    }
+
+    .links {
+      font-size: 13px;
+    }
+
+    .navLinks {
+      justify-content: flex-end;
+      margin-right: 30px;
+      gap: 20px;
     }
   }
 `;
