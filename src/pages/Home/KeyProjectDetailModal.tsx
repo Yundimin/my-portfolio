@@ -17,18 +17,35 @@ const StyledModal = styled(Modal)`
     max-width: 1140px;
   }
 
+  .modal-header {
+    button {
+      margin-right: 20px;
+    }
+  }
+
   img {
     width: 100%;
     min-height: 540px;
     object-fit: "scale-down";
   }
 
+  .modal-title {
+    border-bottom: none;
+    margin-left: 20px;
+  }
+
   .modal-body {
-    padding: 10px;
+    padding: 30px 50px;
     margin: auto;
   }
 
   @media (max-width: 768px) {
+    .modal-header {
+      button {
+        margin-right: 3px;
+      }
+    }
+
     .custom-modal {
       padding: 0 !important;
     }
@@ -45,7 +62,7 @@ const StyledModal = styled(Modal)`
     }
 
     .modal-body {
-      padding: 10px;
+      padding: 20px;
       margin: auto;
       display: flex;
       flex-direction: column;
@@ -55,6 +72,11 @@ const StyledModal = styled(Modal)`
     img {
       min-height: 300px !important;
       object-fit: contain;
+    }
+
+    .modal-title {
+      margin-left: 10px;
+      font-size: 17px;
     }
   }
 `;
@@ -79,15 +101,12 @@ const KeyProjectDetailModal: React.FC<ImageModalProps> = ({
         className="custom-modal"
       >
         <Modal.Header>
-          <Modal.Title style={{ borderBottom: "none", marginLeft: "20px" }}>
-            {title}
-          </Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
           <button
             type="button"
             className="btn-close"
             aria-label="Close"
             onClick={handleClose}
-            style={{ marginRight: "10px" }}
           ></button>
         </Modal.Header>
         <Modal.Body>
