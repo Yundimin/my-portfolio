@@ -11,6 +11,22 @@ export const ClientWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: auto;
+
+  @media (max-width: 1685px) {
+    height: 850px;
+  }
+
+  @media (max-width: 1385px) {
+    height: 600px;
+  }
+
+  @media (max-width: 980px) {
+    height: 500px;
+  }
+
+  @media (max-width: 690px) {
+    height: 400px;
+  }
 `;
 
 export const ClientImg = styled.img`

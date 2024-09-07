@@ -10,11 +10,20 @@ import nameImg from "../../assets/CWJ.png";
 
 function Logo() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [backgroundSize, setBackgroundSize] = useState("cover");
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
+
+      // Check the width and adjust background size
+      if (window.innerWidth <= 760) {
+        setBackgroundSize("cover");
+      } else {
+        const newSize = 110 + position * 0.1 + "%";
+        setBackgroundSize(newSize);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -24,12 +33,10 @@ function Logo() {
     };
   }, []);
 
-  const backgroundImageSize = 100 + scrollPosition * 0.1 + "%";
-
   return (
     <LogoWrapper
       style={{
-        backgroundSize: backgroundImageSize,
+        backgroundSize: backgroundSize,
       }}
     >
       <LogoContent>

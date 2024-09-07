@@ -86,5 +86,23 @@ export const ProjectWrapper = styled.div`
         width: 500px;
       }
     }
+
+    @media (max-width: 767px) {
+      .swiper-slide {
+        width: 300px;
+      }
+      .video-swiper-button-prev,
+      .video-swiper-button-next {
+        width: 25px;
+      }
+
+      .video-swiper-button-prev {
+        left: 10px;
+      }
+
+      .video-swiper-button-next {
+        right: 10px;
+      }
+    }
   }
 `;

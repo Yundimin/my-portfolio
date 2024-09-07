@@ -11,6 +11,22 @@ export const LogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: auto;
+
+  @media (max-width: 1685px) {
+    height: 1000px;
+  }
+
+  @media (max-width: 1400px) {
+    height: 850px;
+  }
+
+  @media (max-width: 1175px) {
+    height: 650px;
+  }
+
+  @media (max-width: 920px) {
+    height: 500px;
+  }
 `;
 
 export const DarkOverlay = styled.div`
@@ -55,4 +71,8 @@ export const LogoContent = styled.div`
 
 export const NameImg = styled.img`
   position: absolute;
+
+  @media (max-width: 690px) {
+    width: 200px;
+  }
 `;

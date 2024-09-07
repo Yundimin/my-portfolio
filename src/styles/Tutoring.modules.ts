@@ -83,6 +83,43 @@ export const ProjectWrapper = styled.div`
       .swiper-slide {
         width: 300px;
         margin: 0 10px;
+
+        .slide-caption {
+          height: 100px;
+          width: 100%;
+          background-color: #ff7c7c;
+          color: black;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: opacity 0.3s ease;
+          cursor: default;
+          font-size: 15px;
+
+          .slide-title {
+            font-weight: 600;
+          }
+          .slide-subtitle {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      .swiper-slide {
+        width: 100%;
+        height: 500px;
+        margin: 0 10px;
+      }
+
+      .tutor-swiper-button-prev,
+      .tutor-swiper-button-next {
+        width: 25px;
+        height: 25px;
+        color: black;
+        margin: 5px;
       }
     }
   }
