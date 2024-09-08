@@ -5,15 +5,16 @@ export const ProjectTitle = styled.div`
   justify-content: center;
   font-size: 36px;
   font-weight: 700;
-  padding: 40px 0;
+  margin-bottom: 40px;
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
-  height: 720px;
+  height: 840px;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 70px 0;
 
   .project-slide-wrapper {
     display: flex;
@@ -69,7 +70,7 @@ export const ProjectWrapper = styled.div`
         }
 
         &:hover {
-          opacity: 0.7;
+          opacity: 0.9;
         }
       }
     }
@@ -94,9 +95,7 @@ export const ProjectWrapper = styled.div`
       .swiper-slide {
         width: 100%;
         height: 500px;
-        justify-content: center;
-        display: flex;
-        transition: opacity 0.5s ease;
+        margin: 0 10px;
 
         .slide-img {
           width: 100%;

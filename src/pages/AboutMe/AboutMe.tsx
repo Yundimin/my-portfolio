@@ -146,41 +146,45 @@ const AboutMe = () => {
           </div>
           <div className="company-wrapper">
             <div className="title">경력</div>
-            {jsonObject?.companies.map((company: any, index: any) => (
-              <div key={index} className="company">
-                <h2>{company.name}</h2>
-                {company.project.map((proj: any, idx: any) => (
-                  <div key={idx} className="project">
-                    <h3>{proj.title}</h3>
-                    <ul style={{ marginLeft: "10px" }}>
-                      {proj.values.map((value: any, i: any) => (
-                        <li key={i}>
-                          {value.subtitle && <div>{value.subtitle}</div>}
-                          <ul>
-                            {value.description.map((desc: any, j: any) => (
-                              <li key={j}>{desc}</li>
-                            ))}
-                          </ul>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div style={{ margin: "auto" }}>
+              {jsonObject?.companies.map((company: any, index: any) => (
+                <div key={index} className="company">
+                  <h2>{company.name}</h2>
+                  {company.project.map((proj: any, idx: any) => (
+                    <div key={idx} className="project">
+                      <h3>{proj.title}</h3>
+                      <ul style={{ marginLeft: "10px" }}>
+                        {proj.values.map((value: any, i: any) => (
+                          <li key={i}>
+                            {value.subtitle && <div>{value.subtitle}</div>}
+                            <ul>
+                              {value.description.map((desc: any, j: any) => (
+                                <li key={j}>{desc}</li>
+                              ))}
+                            </ul>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="project-wrapper">
             <div className="title">프로젝트</div>
-            {jsonObject?.projects.map((project: any, index: any) => (
-              <div key={index} className="project-box">
-                <h2>{project.project}</h2>
-                {project.content.map((content: any, idx: any) => (
-                  <div key={idx} className="project">
-                    <li style={{ marginLeft: "10px" }}>{content}</li>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div style={{ margin: "auto" }}>
+              {jsonObject?.projects.map((project: any, index: any) => (
+                <div key={index} className="project-box">
+                  <h2>{project.project}</h2>
+                  {project.content.map((content: any, idx: any) => (
+                    <div key={idx} className="project">
+                      <li style={{ marginLeft: "10px" }}>{content}</li>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="lecture-wrapper">
             <div className="title">강의</div>

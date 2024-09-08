@@ -6,14 +6,23 @@ export const ProjectTitle = styled.div`
   font-size: 36px;
   font-weight: 700;
   padding: 40px 0;
+  margin-top: 100px;
+
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
-  height: 720px;
+  height: 840px;
   display: flex;
   flex-direction: column;
   position: relative;
+
+  @media (max-width: 767px) {
+    height: 640px;
+  }
 
   .project-slide-wrapper {
     display: flex;
@@ -32,7 +41,7 @@ export const ProjectWrapper = styled.div`
     }
 
     .swiper-slide {
-      width: 500px;
+      width: 640px;
       justify-content: center;
       display: flex;
       transition: opacity 0.5s ease;
@@ -41,17 +50,20 @@ export const ProjectWrapper = styled.div`
 
       &:hover {
         opacity: 0.7;
+        cursor: pointer;
       }
 
       .slide-img {
         width: 100%;
-        height: 350px;
+        height: 360px;
       }
 
       .slide-caption {
-        height: 100px;
+        position: absolute;
+        height: 100%;
         width: 100%;
-        background-color: #ff7c7c;
+        background-color: #ffffff;
+        opacity: 0;
         color: black;
         justify-content: center;
         display: flex;
@@ -66,6 +78,11 @@ export const ProjectWrapper = styled.div`
         }
         .slide-subtitle {
           font-weight: 300;
+        }
+
+        &:hover {
+          opacity: 0.9;
+          cursor: pointer;
         }
       }
     }
@@ -85,9 +102,9 @@ export const ProjectWrapper = styled.div`
         margin: 0 10px;
 
         .slide-caption {
-          height: 100px;
+          height: 100%;
           width: 100%;
-          background-color: #ff7c7c;
+          background-color: #ffffff;
           color: black;
           justify-content: center;
           display: flex;
@@ -108,10 +125,16 @@ export const ProjectWrapper = styled.div`
     }
 
     @media (max-width: 767px) {
+      height: 340px;
       .swiper-slide {
         width: 100%;
-        height: 500px;
-        margin: 0 10px;
+        height: 340px;
+
+        .slide-img {
+          width: 100%;
+          height: 250px;
+          object-fit: contain;
+        }
       }
 
       .tutor-swiper-button-prev,

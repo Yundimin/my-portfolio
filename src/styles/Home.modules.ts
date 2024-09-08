@@ -6,7 +6,7 @@ export const LogoWrapper = styled.div`
   background-position: top;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 1040px;
+  height: 1080px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +40,10 @@ export const DarkOverlay = styled.div`
   );
 
   z-index: 0;
+
+  @media (max-width: 690px) {
+    width: 80%;
+  }
 `;
 
 export const LogoContent = styled.div`

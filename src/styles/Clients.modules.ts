@@ -6,14 +6,14 @@ export const ClientWrapper = styled.div`
   background-position: top;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 1300px;
+  height: 1400px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
 
   @media (max-width: 1685px) {
-    height: 850px;
+    height: 1000px;
   }
 
   @media (max-width: 1385px) {

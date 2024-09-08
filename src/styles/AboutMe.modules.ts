@@ -80,10 +80,12 @@ export const AboutMeWrapper = styled.div`
 
     .edu-contact-wrapper {
       width: 100%;
+      max-width: 800px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       color: white;
+      margin: auto;
 
       .school-box {
         .school-title {
@@ -128,6 +130,7 @@ export const AboutMeWrapper = styled.div`
       .title {
         font-weight: 500;
         text-align: center;
+        margin-bottom: 20px;
       }
 
       .company {
@@ -171,7 +174,7 @@ export const AboutMeWrapper = styled.div`
 
       .title {
         font-weight: 500;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         text-align: center;
       }
 
@@ -206,10 +209,12 @@ export const AboutMeWrapper = styled.div`
 
     .lecture-wrapper {
       width: 100%;
+      max-width: 800px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       color: white;
+      margin: auto;
       .title {
         font-weight: 500;
         text-align: center;
@@ -308,11 +313,14 @@ export const AboutMeWrapper = styled.div`
     }
 
     .award-wrapper {
+      width: 100%;
+      max-width: 800px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       color: white;
+      margin: auto;
 
       .title {
         font-weight: 500;

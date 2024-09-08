@@ -9,6 +9,7 @@ export const NavbarWrapper = styled.div`
     position: absolute;
     width: 245px;
     margin-left: 65px;
+    top: 8px;
   }
   .navLinks {
     width: 100%;
@@ -60,6 +61,7 @@ export const NavbarWrapper = styled.div`
     .headerLogo {
       width: 200px;
       margin-left: 40px;
+      top: 10px;
     }
   }
 
@@ -79,6 +81,7 @@ export const NavbarWrapper = styled.div`
     .headerLogo {
       width: 150px;
       margin-left: 30px;
+      top: 19px;
     }
 
     .links {

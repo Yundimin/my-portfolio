@@ -16,7 +16,9 @@ export const Header = () => {
 
   return (
     <NavbarWrapper>
-      <img src={headerLogo} alt="headerLogo" className="headerLogo"></img>
+      <NavLink to="/" style={{ textDecoration: "none" }}>
+        <img src={headerLogo} alt="headerLogo" className="headerLogo"></img>
+      </NavLink>{" "}
       <div className="navLinks">
         {menuItems.map((nav, index) => (
           <NavLink

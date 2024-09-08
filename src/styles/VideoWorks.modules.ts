@@ -5,17 +5,18 @@ export const ProjectTitle = styled.div`
   justify-content: center;
   font-size: 36px;
   font-weight: 700;
-  padding: 40px 0;
   color: white;
+  margin-bottom: 40px;
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
-  height: 1080px;
+  height: 1180px;
   display: flex;
   flex-direction: column;
   position: relative;
   background-color: black;
+  padding: 90px 0;
 
   .project-slide-wrapper {
     width: 100%;
