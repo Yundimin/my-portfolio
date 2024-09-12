@@ -29,6 +29,10 @@ const Home = () => {
     async function fetchResources() {
       const imageUrl = await getImageUrl("aboutMeBg.png");
       if (imageUrl) setBgImg(imageUrl);
+
+      if (window.innerWidth <= 760) {
+        setBackgroundSize("cover");
+      }
     }
     fetchResources();
   }, []);
@@ -40,7 +44,7 @@ const Home = () => {
 
       if (window.innerWidth <= 760) {
         setBackgroundSize("cover");
-        setBackgroundPosition("center");
+        setBackgroundPosition("top");
       } else {
         const newSize = 100 + position * 0.03 + "%";
         setBackgroundSize(newSize);

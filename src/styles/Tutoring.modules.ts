@@ -131,12 +131,15 @@ export const ProjectWrapper = styled.div`
       height: 340px;
       .swiper-slide {
         width: 100%;
-        height: 340px;
 
         .slide-img {
           width: 100%;
           height: 250px;
-          object-fit: contain;
+          /* object-fit: cover; */
+        }
+
+        .slide-caption {
+          height: 250px;
         }
       }
 
