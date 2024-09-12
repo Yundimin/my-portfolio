@@ -63,12 +63,6 @@ function KeyProject() {
           className="banner"
           spaceBetween={20}
           slidesPerView={"auto"}
-          breakpoints={{
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-          }}
           navigation={{
             prevEl: ".key-swiper-button-prev",
             nextEl: ".key-swiper-button-next",
