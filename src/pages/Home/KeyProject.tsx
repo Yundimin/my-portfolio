@@ -66,6 +66,7 @@ function KeyProject() {
           breakpoints={{
             768: {
               slidesPerView: 1,
+              spaceBetween: 0,
             },
           }}
           navigation={{
