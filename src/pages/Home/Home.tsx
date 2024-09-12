@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import KeyProject from "./KeyProject";
 import VideoWorks from "./VideoWorks";
@@ -11,7 +11,6 @@ import { storage } from "../../firebase";
 async function getImageUrl(img: string) {
   try {
     const storageRef = ref(storage, `assets/aboutMe/${img}`);
-
     const url = await getDownloadURL(storageRef);
     return url;
   } catch (error) {
@@ -21,19 +20,18 @@ async function getImageUrl(img: string) {
 }
 
 const Home = () => {
+  const [bgImg, setBgImg] = useState<string>("");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [backgroundSize, setBackgroundSize] = useState("100%");
+  const [backgroundPosition, setBackgroundPosition] = useState("top");
+
   useEffect(() => {
     async function fetchResources() {
       const imageUrl = await getImageUrl("aboutMeBg.png");
-
       if (imageUrl) setBgImg(imageUrl);
     }
-
     fetchResources();
   }, []);
-
-  const [bgImg, setBgImg] = useState<string>("");
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [backgroundSize, setBackgroundSize] = useState("cover");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +40,7 @@ const Home = () => {
 
       if (window.innerWidth <= 760) {
         setBackgroundSize("cover");
+        setBackgroundPosition("center");
       } else {
         const newSize = 100 + position * 0.03 + "%";
         setBackgroundSize(newSize);
@@ -69,6 +68,9 @@ const Home = () => {
           style={{
             backgroundSize: backgroundSize,
             backgroundImage: `url(${bgImg})`,
+            backgroundPosition: backgroundPosition,
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "scroll",
           }}
         >
           <Logo />

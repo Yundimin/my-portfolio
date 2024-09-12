@@ -16,7 +16,7 @@ export const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 70px 20px;
+  padding: 70px 0;
   margin: auto;
 
   .project-slide-wrapper {
