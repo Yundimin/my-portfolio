@@ -30,8 +30,8 @@ export const ProjectWrapper = styled.div`
     }
 
     .swiper {
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
       margin-bottom: 2rem;
     }
 
@@ -96,7 +96,7 @@ export const ProjectWrapper = styled.div`
 
     @media (max-width: 767px) {
       .swiper-slide {
-        width: 100%;
+        width: 360px;
         height: 500px;
         margin: 0 10px;
 
