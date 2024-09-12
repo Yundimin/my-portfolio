@@ -62,6 +62,7 @@ function KeyProject() {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           className="banner"
           spaceBetween={20}
+          initialSlide={0}
           breakpoints={{
             768: {
               slidesPerView: 1, // 모바일에서 1개의 슬라이드만 표시
