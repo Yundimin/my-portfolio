@@ -62,7 +62,14 @@ function KeyProject() {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           className="banner"
           spaceBetween={20}
-          slidesPerView={"auto"}
+          breakpoints={{
+            768: {
+              slidesPerView: 1, // 모바일에서 1개의 슬라이드만 표시
+            },
+            1024: {
+              slidesPerView: "auto", // 데스크톱에서 현재 설정 유지
+            },
+          }}
           navigation={{
             prevEl: ".key-swiper-button-prev",
             nextEl: ".key-swiper-button-next",
