@@ -1,8 +1,8 @@
 import { ProjectTitle, ProjectWrapper } from "../../styles/KeyProject.modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import leftArrow from "../../assets/left-arrow.png";
-import rightArrow from "../../assets/right-arrow.png";
+import leftArrow from "../../assets/left-arrow-white.png";
+import rightArrow from "../../assets/right-arrow-white.png";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";

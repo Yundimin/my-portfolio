@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  background-size: cover;
+  background-position: center center;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-repeat: no-repeat;
+  /* background-color: rgba(0, 0, 0, 1); */
+`;
+
 export const LogoWrapper = styled.div`
-  background-image: url("../assets/background.png");
+  /* background-image: url("../assets/background.png");
   background-size: cover;
   background-position: top;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); */
   width: 100%;
   height: 1080px;
   display: flex;

@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 export const ClientWrapper = styled.div`
-  background-image: url("../assets/background.png");
+  /* background-image: url("../assets/background.png");
   background-size: cover;
   background-position: top;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); */
   width: 100%;
+  max-width: 1400px;
   height: 1400px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
+  margin: auto;
 
   @media (max-width: 1685px) {
     height: 1000px;

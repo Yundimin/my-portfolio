@@ -11,11 +11,13 @@ export const ProjectTitle = styled.div`
 
 export const ProjectWrapper = styled.div`
   width: 100%;
+  max-width: 2000px;
+  margin: auto;
   height: 1180px;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: black;
+  background-color: transparent;
   padding: 90px 0;
 
   .project-slide-wrapper {
@@ -69,8 +71,8 @@ export const ProjectWrapper = styled.div`
       z-index: 2;
       width: 20%;
       left: 0;
-      height: 90%;
-      background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 69.77%);
+      height: 67%;
+      background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     }
 
     .gradient-box-right {
@@ -78,8 +80,8 @@ export const ProjectWrapper = styled.div`
       z-index: 2;
       width: 20%;
       right: 0;
-      height: 90%;
-      background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 69.77%);
+      height: 67%;
+      background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     }
 
     @media (max-width: 1400px) {

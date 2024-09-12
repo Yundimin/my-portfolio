@@ -34,15 +34,11 @@ function Logo() {
   }, []);
 
   return (
-    <LogoWrapper
-      style={{
-        backgroundSize: backgroundSize,
-      }}
-    >
-      <LogoContent>
+    <LogoWrapper>
+      {/* <LogoContent>
         <img src={textImg} alt="text" className="item" />
-      </LogoContent>
-      <DarkOverlay />
+      </LogoContent> */}
+      {/* <DarkOverlay /> */}
       <NameImg src={nameImg} alt="textImg" />
     </LogoWrapper>
   );

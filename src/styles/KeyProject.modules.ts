@@ -6,15 +6,18 @@ export const ProjectTitle = styled.div`
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 40px;
+  color: #ffffff;
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
+  max-width: 1920px;
   height: 840px;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 70px 0;
+  padding: 70px 20px;
+  margin: auto;
 
   .project-slide-wrapper {
     display: flex;

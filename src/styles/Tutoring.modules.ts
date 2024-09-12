@@ -7,6 +7,7 @@ export const ProjectTitle = styled.div`
   font-weight: 700;
   padding: 40px 0;
   margin-top: 100px;
+  color: #ffffff;
 
   @media (max-width: 767px) {
     margin-top: 60px;
@@ -15,6 +16,8 @@ export const ProjectTitle = styled.div`
 
 export const ProjectWrapper = styled.div`
   width: 100%;
+  max-width: 2000px;
+  margin: auto;
   height: 840px;
   display: flex;
   flex-direction: column;
