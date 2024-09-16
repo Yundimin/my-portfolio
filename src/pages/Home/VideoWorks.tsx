@@ -40,17 +40,6 @@ const VidowWorks = () => {
   const keyVideoWorks = useVideoWorks(getVideoWorksFirst);
   const keyVideoWorkSecond = useVideoWorks(getVideoWorksSecond);
 
-  console.log(keyVideoWorkSecond);
-  const videoId1 = [
-    "atfDG8dTV50",
-    "WLoOTz_7l3s",
-    "WLoOTz_7l3s",
-    "WLoOTz_7l3s",
-    "WLoOTz_7l3s",
-    "WLoOTz_7l3s",
-  ];
-  const videoId2 = ["atfDG8dTV50", "WLoOTz_7l3s", "WLoOTz_7l3s", "WLoOTz_7l3s"];
-
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     event.target.pauseVideo();
   };
