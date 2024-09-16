@@ -66,10 +66,10 @@ function KeyProject() {
           cssMode={true}
           breakpoints={{
             768: {
-              slidesPerView: 1, // 모바일에서 1개의 슬라이드만 표시
+              slidesPerView: 1,
             },
             1024: {
-              slidesPerView: "auto", // 데스크톱에서 현재 설정 유지
+              slidesPerView: "auto",
             },
           }}
           navigation={{

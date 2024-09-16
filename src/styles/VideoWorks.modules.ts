@@ -36,7 +36,6 @@ export const ProjectWrapper = styled.div`
 
     .swiper-wrapper {
       display: flex;
-      justify-content: space-evenly;
     }
 
     .swiper {

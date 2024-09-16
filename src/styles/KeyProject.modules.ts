@@ -26,7 +26,6 @@ export const ProjectWrapper = styled.div`
 
     .swiper-wrapper {
       display: flex;
-      justify-content: space-evenly;
     }
 
     .swiper {
@@ -37,6 +36,7 @@ export const ProjectWrapper = styled.div`
 
     .swiper-slide {
       width: 360px;
+      height: 500px;
       justify-content: center;
       display: flex;
       transition: opacity 0.5s ease;
@@ -101,13 +101,13 @@ export const ProjectWrapper = styled.div`
         margin: 0 10px;
 
         .slide-img {
-          width: 100%;
+          width: 360px;
         }
 
         .slide-caption {
           position: absolute;
           height: 100%;
-          width: 100%;
+          width: 360px;
           background-color: #ffffff;
 
           opacity: 0;
