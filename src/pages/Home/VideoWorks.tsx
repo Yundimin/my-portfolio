@@ -80,6 +80,7 @@ const VidowWorks = () => {
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             className="banner"
             spaceBetween={10}
+            initialSlide={0}
             cssMode={true}
             slidesPerView={"auto"}
             navigation={{
