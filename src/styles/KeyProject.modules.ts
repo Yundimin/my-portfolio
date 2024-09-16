@@ -31,14 +31,12 @@ export const ProjectWrapper = styled.div`
     .swiper {
       width: 100%;
       height: 100%;
-      margin-bottom: 2rem;
     }
 
     .swiper-slide {
       width: 360px;
       height: 500px;
-      justify-content: center;
-      display: flex;
+      overflow: hidden;
       transition: opacity 0.5s ease;
       &:hover {
         opacity: 0.7;
@@ -54,7 +52,7 @@ export const ProjectWrapper = styled.div`
         height: 100%;
         width: 100%;
         background-color: #ffffff;
-
+        top: 0;
         opacity: 0;
         justify-content: center;
         display: flex;

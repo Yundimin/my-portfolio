@@ -39,13 +39,11 @@ export const ProjectWrapper = styled.div`
     .swiper {
       width: 90%;
       height: 90%;
-      margin-bottom: 2rem;
     }
 
     .swiper-slide {
       width: 640px;
-      justify-content: center;
-      display: flex;
+      overflow: hidden;
       transition: opacity 0.5s ease;
       flex-direction: column;
       cursor: pointer;
@@ -74,6 +72,7 @@ export const ProjectWrapper = styled.div`
         transition: opacity 0.3s ease;
         cursor: default;
         font-size: 20px;
+        top: 0;
 
         .slide-title {
           font-weight: 600;
@@ -130,15 +129,16 @@ export const ProjectWrapper = styled.div`
       height: 340px;
       .swiper-slide {
         width: 100%;
-
+        display: flex;
+        justify-content: center;
         .slide-img {
           width: 100%;
           height: 250px;
-          /* object-fit: cover; */
         }
 
         .slide-caption {
           height: 250px;
+          top: 28px;
         }
       }
 
