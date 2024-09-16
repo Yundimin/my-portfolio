@@ -80,6 +80,7 @@ const VidowWorks = () => {
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             className="banner"
             spaceBetween={10}
+            cssMode={true}
             slidesPerView={"auto"}
             navigation={{
               prevEl: ".video-swiper-button-prev",
