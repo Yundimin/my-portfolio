@@ -63,7 +63,6 @@ function KeyProject() {
           className="banner"
           spaceBetween={20}
           initialSlide={0}
-          cssMode={true}
           breakpoints={{
             768: {
               slidesPerView: 1,

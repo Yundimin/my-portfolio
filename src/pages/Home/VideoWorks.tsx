@@ -81,7 +81,6 @@ const VidowWorks = () => {
             className="banner"
             spaceBetween={10}
             initialSlide={0}
-            cssMode={true}
             slidesPerView={"auto"}
             navigation={{
               prevEl: ".video-swiper-button-prev",

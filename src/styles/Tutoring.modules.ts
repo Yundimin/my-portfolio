@@ -44,6 +44,8 @@ export const ProjectWrapper = styled.div`
     .swiper-slide {
       width: 640px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
       transition: opacity 0.5s ease;
       flex-direction: column;
       cursor: pointer;
@@ -100,7 +102,6 @@ export const ProjectWrapper = styled.div`
     @media (max-width: 1060px) {
       .swiper-slide {
         width: 300px;
-        margin: 0 10px;
 
         .slide-caption {
           height: 100%;
