@@ -62,8 +62,16 @@ const Tutoring = () => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           className="banner"
-          spaceBetween={10}
-          slidesPerView={"auto"}
+          spaceBetween={20}
+          initialSlide={0}
+          breakpoints={{
+            768: {
+              slidesPerView: 1,
+            },
+            1024: {
+              slidesPerView: "auto",
+            },
+          }}
           navigation={{
             prevEl: ".tutor-swiper-button-prev",
             nextEl: ".tutor-swiper-button-next",

@@ -5,27 +5,19 @@ export const ProjectTitle = styled.div`
   justify-content: center;
   font-size: 36px;
   font-weight: 700;
-  padding: 40px 0;
-  margin-top: 100px;
+  margin-bottom: 40px;
   color: #ffffff;
-
-  @media (max-width: 767px) {
-    margin-top: 60px;
-  }
 `;
 
 export const ProjectWrapper = styled.div`
   width: 100%;
-  max-width: 2000px;
-  margin: auto;
+  max-width: 1920px;
   height: 840px;
   display: flex;
   flex-direction: column;
   position: relative;
-
-  @media (max-width: 767px) {
-    height: 640px;
-  }
+  padding: 70px 0;
+  margin: auto;
 
   .project-slide-wrapper {
     display: flex;
@@ -37,18 +29,17 @@ export const ProjectWrapper = styled.div`
     }
 
     .swiper {
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
     }
 
     .swiper-slide {
-      width: 640px;
+      width: 360px;
+      height: 500px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       transition: opacity 0.5s ease;
-      flex-direction: column;
-      cursor: pointer;
 
       &:hover {
         opacity: 0.7;
@@ -57,7 +48,6 @@ export const ProjectWrapper = styled.div`
 
       .slide-img {
         width: 100%;
-        height: 360px;
       }
 
       .slide-caption {
@@ -65,27 +55,30 @@ export const ProjectWrapper = styled.div`
         height: 100%;
         width: 100%;
         background-color: #ffffff;
+        top: 0;
         opacity: 0;
-        color: black;
         justify-content: center;
         display: flex;
-        flex-direction: column;
         align-items: center;
         transition: opacity 0.3s ease;
-        cursor: default;
-        font-size: 20px;
-        top: 0;
+        flex-direction: column;
+        padding: 0 30px;
 
         .slide-title {
+          color: black;
           font-weight: 600;
+          font-size: 24px;
+          text-align: center;
+          padding: 30px;
+          word-break: keep-all;
         }
+
         .slide-subtitle {
-          font-weight: 300;
+          font-size: 18px;
         }
 
         &:hover {
           opacity: 0.9;
-          cursor: pointer;
         }
       }
     }
@@ -102,49 +95,48 @@ export const ProjectWrapper = styled.div`
     @media (max-width: 1060px) {
       .swiper-slide {
         width: 300px;
-
-        .slide-caption {
-          height: 100%;
-          width: 100%;
-          background-color: #ffffff;
-          color: black;
-          justify-content: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          transition: opacity 0.3s ease;
-          cursor: default;
-          font-size: 15px;
-
-          .slide-title {
-            font-weight: 600;
-          }
-          .slide-subtitle {
-            font-weight: 300;
-          }
-        }
       }
     }
 
     @media (max-width: 767px) {
-      height: 340px;
       .swiper-slide {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+        width: 360px;
+        height: 500px;
+
         .slide-img {
-          width: 100%;
-          height: 250px;
+          width: 360px;
         }
 
         .slide-caption {
-          height: 250px;
-          top: 28px;
+          position: absolute;
+          height: 100%;
+          width: 360px;
+          background-color: #ffffff;
+          opacity: 0;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          transition: opacity 0.3s ease;
+          flex-direction: column;
+
+          .slide-title {
+            color: black;
+            font-weight: 600;
+            font-size: 24px;
+          }
+
+          .slide-subtitle {
+            font-size: 18px;
+          }
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
-
       .tutor-swiper-button-prev,
       .tutor-swiper-button-next {
+        cursor: pointer;
         width: 25px;
         height: 25px;
         color: black;
