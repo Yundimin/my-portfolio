@@ -17,7 +17,7 @@ async function getImageUrl(img: string) {
 
 async function getJson(): Promise<Record<string, any> | null> {
   try {
-    const storageRef = ref(storage, "AboutMe/aboutMe2.json");
+    const storageRef = ref(storage, "AboutMe/aboutMe.json");
     const url = await getDownloadURL(storageRef);
     const response = await fetch(url);
     const data = await response.json();
