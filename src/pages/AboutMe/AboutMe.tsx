@@ -17,7 +17,7 @@ async function getImageUrl(img: string) {
 
 async function getJson(): Promise<Record<string, any> | null> {
   try {
-    const storageRef = ref(storage, "AboutMe/aboutMe.json");
+    const storageRef = ref(storage, "AboutMe/aboutMe2.json");
     const url = await getDownloadURL(storageRef);
     const response = await fetch(url);
     const data = await response.json();
@@ -32,6 +32,7 @@ async function getJson(): Promise<Record<string, any> | null> {
 const AboutMe = () => {
   const [aboutMeImg, setAboutMeImg] = useState<string>("");
   const [bgImg, setBgImg] = useState<string>("");
+  const [chooImg, setChooImg] = useState<string>("");
   const [jsonObject, setJsonObject] = useState<Record<string, any> | null>(
     null
   );
@@ -39,14 +40,16 @@ const AboutMe = () => {
 
   useEffect(() => {
     async function fetchResources() {
-      const [imageUrl1, imageUrl2, data] = await Promise.all([
+      const [imageUrl1, imageUrl2, imageUrl3, data] = await Promise.all([
         getImageUrl("aboutMe.png"),
         getImageUrl("aboutMeBg.png"),
+        getImageUrl("choo.png"),
         getJson(),
       ]);
 
       if (imageUrl1) setAboutMeImg(imageUrl1);
       if (imageUrl2) setBgImg(imageUrl2);
+      if (imageUrl3) setChooImg(imageUrl3);
       if (data) setJsonObject(data);
 
       if (imageUrl1 && imageUrl2 && data) {
@@ -78,9 +81,30 @@ const AboutMe = () => {
             <img className="about-img" src={aboutMeImg} alt="About Me" />
           </div>
 
+          <div className="choo-img-box">
+            <img className="choo-img" src={chooImg} alt="Choo" />
+            <div className="choo-text-box">
+              <div className="choo-title-box">
+                <div className="choo-title">추우주</div>
+                <div className="choo-birth">(1997.10.17)</div>
+              </div>
+              <div className="choo-info-box">
+                <div className="choo-info-name">연락처</div>
+                {jsonObject?.contact_info.phone}
+              </div>
+              <div className="choo-info-box">
+                <div className="choo-info-name">이메일</div>
+                {jsonObject?.contact_info.email}
+              </div>
+              <div className="choo-info-box">
+                <div className="choo-info-name">주소</div>
+                {jsonObject?.contact_info.address}
+              </div>
+            </div>
+          </div>
+
           <div className="about-text-box">
             <div className="text-title">{jsonObject?.greeting}</div>
-            <div className="text-summary">{jsonObject?.summary}</div>
             <div className="text-content-box">
               {jsonObject?.introduction?.map((intro: string, index: number) => (
                 <div key={index}>{intro}</div>
@@ -88,98 +112,98 @@ const AboutMe = () => {
             </div>
           </div>
           <div className="edu-contact-wrapper">
-            <div className="school-box">
-              <div className="school-title">학력</div>
-              {jsonObject?.education
-                ?.reduce((acc: any, edu: any) => {
-                  const existingSchool = acc.find(
-                    (item: any) => item.school === edu.school
-                  );
-                  if (existingSchool) {
-                    existingSchool.majors.push(
-                      edu.major + " " + edu.degree + " " + edu.honors
-                    );
-                    existingSchool.date.push(edu.graduation_date);
-                  } else {
-                    acc.push({
-                      school: edu.school,
-                      majors: [edu.major + " " + edu.degree + " " + edu.honors],
-                      date: [edu.graduation_date],
-                    });
-                  }
-                  return acc;
-                }, [])
-                .map((edu: any, index: any) => (
-                  <div key={index}>
-                    <div className="school-name">{edu.school}</div>
-                    <div className="school-info">
-                      <div>
-                        {edu.majors.map((major: any) => (
-                          <div>{major}</div>
-                        ))}
-                      </div>
-                      <div>
-                        {edu.date.map((date: any) => (
-                          <div>{date}</div>
-                        ))}
-                      </div>
+            <div className="school-title">학력</div>
+            <div className="school-wrapper">
+              <div className="school-box">
+                <div className="school-name">
+                  {jsonObject?.education[0].school}
+                </div>
+                <div className="school-info">
+                  <div className="school-major">
+                    <div>{jsonObject?.education[0].major}</div>
+                  </div>
+                  <div className="school-honor-education-box">
+                    <div style={{ minWidth: "60px" }}>
+                      <div>{jsonObject?.education[0].honors}</div>
+                    </div>
+                    <div>
+                      <div>{jsonObject?.education[0].graduation_date}</div>
                     </div>
                   </div>
-                ))}
-            </div>
-            <div className="contact-box">
-              <div className="contact-title">연락처</div>
-              <div className="contact-info">
-                <div className="phone">{jsonObject?.contact_info.phone}</div>
-
-                {jsonObject?.contact_info.emails.map((email: string) => (
-                  <div className="email" key={email}>
-                    {email}
+                </div>
+                <div className="school-info">
+                  <div className="school-major">
+                    {jsonObject?.education[1].major}
                   </div>
-                ))}
-
-                <div className="phone">
-                  instagram: {jsonObject?.contact_info.insta}
+                  <div className="school-honor-education-box">
+                    <div style={{ minWidth: "60px" }}>
+                      <div>{jsonObject?.education[1].honors}</div>
+                    </div>
+                    <div>
+                      <div>{jsonObject?.education[1].graduation_date}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="school-box">
+                <div className="school-name">
+                  {jsonObject?.education[2].school}
+                </div>
+                <div className="school-info">
+                  <div className="school-major">
+                    <div>{jsonObject?.education[2].major}</div>
+                  </div>
+                  <div className="school-honor-education-box">
+                    <div style={{ minWidth: "60px" }}>
+                      <div>{jsonObject?.education[2].honors}</div>
+                    </div>
+                    <div>
+                      <div>{jsonObject?.education[2].graduation_date}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="company-wrapper">
-            <div className="title">경력</div>
-            <div style={{ margin: "auto" }}>
+            <div className="title">직무경력</div>
+            <div style={{ margin: "auto", paddingLeft: "15px" }}>
               {jsonObject?.companies.map((company: any, index: any) => (
                 <div key={index} className="company">
-                  <h2>{company.name}</h2>
-                  {company.project.map((proj: any, idx: any) => (
-                    <div key={idx} className="project">
-                      <h3>{proj.title}</h3>
-                      <ul style={{ marginLeft: "10px" }}>
-                        {proj.values.map((value: any, i: any) => (
-                          <li key={i}>
-                            {value.subtitle && <div>{value.subtitle}</div>}
-                            <ul>
-                              {value.description.map((desc: any, j: any) => (
-                                <li key={j}>{desc}</li>
-                              ))}
-                            </ul>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  <div className="company-name"> {company.name}</div>
+                  <div className="company-position">{company.position}</div>
+                  <div className="company-project">
+                    {company.project.map((proj: any, idx: any) => (
+                      <div key={idx} className="project">
+                        {proj.title}
+                        <ul style={{ marginLeft: "10px" }}>
+                          {proj.values.map((value: any, i: any) => (
+                            <li key={i}>
+                              {value.subtitle && <div>{value.subtitle}</div>}
+                              <ul>
+                                {value.description.map((desc: any, j: any) => (
+                                  <li key={j}>{desc}</li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           <div className="project-wrapper">
             <div className="title">프로젝트</div>
-            <div style={{ margin: "auto" }}>
+            <div className="project-box">
               {jsonObject?.projects.map((project: any, index: any) => (
-                <div key={index} className="project-box">
-                  <h2>{project.project}</h2>
+                <div key={index} className="project">
+                  <div className="project-title">{project.project}</div>
                   {project.content.map((content: any, idx: any) => (
-                    <div key={idx} className="project">
-                      <li style={{ marginLeft: "10px" }}>{content}</li>
+                    <div key={idx} className="project-description">
+                      <div>{content}</div>
                     </div>
                   ))}
                 </div>
@@ -189,23 +213,40 @@ const AboutMe = () => {
           <div className="lecture-wrapper">
             <div className="title">강의</div>
             <div className="lecture-box">
-              <div className="special-lecture-box">
-                <div className="lecture-title">
-                  {jsonObject?.lectures[0].name}
-                </div>
-                {jsonObject?.lectures[0].lecture.map(
-                  (lecture: any, index: any) => (
-                    <div key={index} className="project-box">
-                      <h2>{lecture.title}</h2>
-                      {lecture.values.map((content: any, idx: any) => (
-                        <div key={idx} className="project">
-                          <li style={{ marginLeft: "10px" }}>{content}</li>
-                        </div>
-                      ))}
-                    </div>
-                  )
-                )}
+              {jsonObject?.lectures[0].lecture.map(
+                (lecture: any, index: any) => (
+                  <div key={index} className="project">
+                    <div className="project-title">{lecture.title}</div>
+                    {lecture.values.map((content: any, idx: any) => (
+                      <div key={idx} className="project-description">
+                        <li style={{ marginLeft: "10px" }}>{content}</li>
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+          <div className="award-wrapper">
+            <div className="title">수상실적</div>
+            {jsonObject?.prize.map((prize: any, index: any) => (
+              <div key={index} className="award">
+                <div>{prize.event}</div>
+                <div style={{ minWidth: "190px" }}>{prize.award}</div>
               </div>
+            ))}
+          </div>
+          <div className="display-wrapper">
+            <div className="title">전시경력</div>
+            {jsonObject?.display.map((display: any, index: any) => (
+              <div key={index} className="display">
+                {display}
+              </div>
+            ))}
+          </div>
+          <div className="extra-wrapper">
+            <div className="title">기타</div>
+            <div className="extra-box">
               <div className="exam-non-profit-box">
                 <div className="exam-art-title">
                   {jsonObject?.lectures[1].name}
@@ -240,23 +281,6 @@ const AboutMe = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="award-wrapper">
-            <div className="title">수상실적</div>
-            {jsonObject?.prize.map((prize: any, index: any) => (
-              <div key={index} className="award">
-                <div>{prize.event}</div>
-                <div style={{ minWidth: "190px" }}>{prize.award}</div>
-              </div>
-            ))}
-          </div>
-          <div className="display-wrapper">
-            <div className="title">전시경력</div>
-            {jsonObject?.display.map((display: any, index: any) => (
-              <div key={index} className="display">
-                {display}
-              </div>
-            ))}
           </div>
         </div>
       </AboutMeWrapper>
